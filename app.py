@@ -2,7 +2,6 @@ import pickle
 import streamlit as st
 import requests
 
-
 # ---------------- FETCH POSTER ---------------- #
 def fetch_poster(movie_id):
     try:
@@ -62,6 +61,10 @@ if not os.path.exists("similarity.pkl"):
 movies = pickle.load(open('movie_list.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
+import pandas as pd
+
+if not isinstance(movies, pd.Dataframe):
+    movies+pd.Dataframe(movies)
 movie_list = movies['title'].values
 
 selected_movie = st.selectbox(
