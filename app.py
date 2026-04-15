@@ -61,7 +61,7 @@ if not os.path.exists("similarity.pkl"):
 movies = pickle.load(open('movie_list.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
-st.writes(movies.head())
+st.write(movies.head())
 movie_list = movies['title'].values
 
 selected_movie = st.selectbox(
