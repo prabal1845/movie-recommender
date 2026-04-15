@@ -64,7 +64,7 @@ similarity = pickle.load(open('similarity.pkl','rb'))
 import pandas as pd
 
 if not isinstance(movies, pd.Dataframe):
-    movies+pd.Dataframe(movies)
+    movies=pd.Dataframe(movies)
 movie_list = movies['title'].values
 
 selected_movie = st.selectbox(
